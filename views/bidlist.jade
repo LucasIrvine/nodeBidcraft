@@ -4,4 +4,5 @@ block custom
 	ul
 		each bid, i in bids
 			li 
-				a(href="/#{clientName}")= bid.clientName
+				a(href="mailto:#{bid.email}") #{bid.clientName + ' - ' + bid.date}
+					

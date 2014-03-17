@@ -10,7 +10,7 @@ var path = require('path');
 //DB requires
 var mongodb = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://nodejitsu:7c1919ee5c3805640495cedc64d77d3d@troup.mongohq.com:10076/nodejitsudb4401589923');
+var db = monk('mongodb://nodejitsu:dba6dddd5a8a23a9e57cb7abf8f9a921@troup.mongohq.com:10026/nodejitsudb1256742875');
 
 var app = express();
 

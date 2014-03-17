@@ -5,7 +5,7 @@ exports.index = function(req, res){
 };
 
 exports.clients = function(req, res){
-  res.render('defaultPage', { title: 'BidCraft', page : 'Clients', copy : 'Below is a list of clients you have placed bids for in the past:' });
+  res.render('defaultPage', { title: 'BidCraft', page : 'Clients', copy : 'List of clients:' });
 };
 
 exports.about = function(req, res){
@@ -13,7 +13,7 @@ exports.about = function(req, res){
 };
 
 exports.quickbid = function(req, res){
-  res.render('bidform', { title: 'BidCraft', page : 'Quick Bid', copy : 'Create a professional bid in 10 minutes.' });
+  res.render('bidform', { title: 'BidCraft', page : 'Quick Bid', copy : 'Create a Bid:' });
 };
 
 exports.saveBid = function(db) {
@@ -22,6 +22,9 @@ exports.saveBid = function(db) {
         var clientName = req.body.clientName;
         var location = req.body.location;
         var quote = req.body.quote;
+        var phone = req.body.phone;
+        var email = req.body.email;
+        var date = new Date();
 
         // Set our collection
         var collection = db.get('bids');
@@ -30,7 +33,10 @@ exports.saveBid = function(db) {
         collection.insert({
             "clientName" : clientName,
             "location" : location,
-            "quote" : quote
+            "quote" : quote,
+            "phone" : phone,
+            "email" : email,
+            "date" : date
 
         }, function (err, doc) {
             if (err) {
